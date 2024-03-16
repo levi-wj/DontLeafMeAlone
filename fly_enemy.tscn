@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_348vg"]
 size = Vector2(60, 56)
 
-[node name="fly_enemy" type="Node2D"]
+[node name="FlyEnemy" type="CharacterBody2D"]
+input_pickable = true
 script = ExtResource("1_8esm3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,3 +17,5 @@ texture = ExtResource("1_yv0k0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 8)
 shape = SubResource("RectangleShape2D_348vg")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
