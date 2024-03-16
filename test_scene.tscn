@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://4fdn1ik7vm4i"]
+[gd_scene load_steps=3 format=3 uid="uid://4fdn1ik7vm4i"]
 
 [ext_resource type="PackedScene" uid="uid://da681bgj6w2dq" path="res://fly_enemy.tscn" id="1_dauns"]
 
+[sub_resource type="Curve2D" id="Curve2D_d0pqb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -385, 311, 0, 0, 0, 0, 721, 311, 0, 0, 0, 0, 719, -166, 0, 0, 0, 0, -212, -166, 0, 0, 0, 0, -204, 187, 0, 0, 0, 0, 564, 189, 0, 0, 0, 0, 561, 13, 0, 0, 0, 0, 191, 13)
+}
+point_count = 8
+
 [node name="Node2D" type="Node2D"]
 
-[node name="fly_enemy" parent="." instance=ExtResource("1_dauns")]
-position = Vector2(-33, 510)
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(339, 272)
+curve = SubResource("Curve2D_d0pqb")
+
+[node name="fly_enemy" parent="Path2D" instance=ExtResource("1_dauns")]
+position = Vector2(-385, 311)
+move_speed = 100
