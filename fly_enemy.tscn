@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://da681bgj6w2dq"]
+
+[ext_resource type="Script" path="res://fly_enemy.gd" id="1_8esm3"]
+[ext_resource type="Texture2D" uid="uid://33tqeqsb8rop" path="res://fly_sprite.png" id="1_yv0k0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_348vg"]
+size = Vector2(60, 56)
+
+[node name="fly_enemy" type="Node2D"]
+script = ExtResource("1_8esm3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_yv0k0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 8)
+shape = SubResource("RectangleShape2D_348vg")
