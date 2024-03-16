@@ -5,3 +5,5 @@ extends PathFollow2D
 
 func _physics_process(delta):
 	set_progress(get_progress() + move_speed * delta)
+	if (progress_ratio == 100):
+		print("done")

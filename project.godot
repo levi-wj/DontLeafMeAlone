@@ -11,4 +11,11 @@ config_version=5
 [application]
 
 config/name="DontLeafMeAlone"
+run/main_scene="res://test_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
