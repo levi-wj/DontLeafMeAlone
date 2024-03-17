@@ -19,7 +19,7 @@ func is_event_left_click(event):
 	return (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT)
 			
 func is_click_in_playable_area(tile_pos):
-	return (tile_pos[0] <= MAP_SIZE.X and tile_pos[1] <= MAP_SIZE.Y)
+	return (tile_pos[0] < MAP_SIZE.X and tile_pos[1] < MAP_SIZE.Y)
 	
 func global_pos_to_tile_coord(global_pos):
 	var local_pos = to_local(global_pos)
