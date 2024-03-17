@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://4fdn1ik7vm4i"]
 
 [ext_resource type="PackedScene" uid="uid://da681bgj6w2dq" path="res://fly_enemy.tscn" id="1_dauns"]
-[ext_resource type="Texture2D" uid="uid://vgn4548ca37b" path="res://images/tileset.png" id="1_ncd1v"]
+[ext_resource type="Texture2D" uid="uid://c34p18jmkyasw" path="res://images/tileset.png" id="1_ncd1v"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_nhcxl"]
-[ext_resource type="PackedScene" path="res://Toolbar.tscn" id="4_fdr3u"]
+[ext_resource type="PackedScene" uid="uid://bc5w158a5u3va" path="res://Toolbar.tscn" id="4_fdr3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw6fq"]
 texture = ExtResource("1_ncd1v")
@@ -11,19 +11,26 @@ texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/next_alternative_id = 3
 1:0/0 = 0
+1:0/0/terrain_set = 0
 1:0/1 = 1
 1:0/1/transpose = true
+1:0/1/terrain_set = 0
 2:0/next_alternative_id = 5
 2:0/0 = 0
+2:0/0/terrain_set = 0
 2:0/1 = 1
 2:0/1/flip_v = true
+2:0/1/terrain_set = 0
 2:0/2 = 2
 2:0/2/flip_h = true
 2:0/2/flip_v = true
+2:0/2/terrain_set = 0
 2:0/4 = 4
 2:0/4/flip_h = true
+2:0/4/terrain_set = 0
 0:1/next_alternative_id = 2
 0:1/0 = 0
+0:1/0/terrain_set = 0
 0:1/1 = 1
 0:1/1/flip_h = true
 1:1/0 = 0
@@ -34,6 +41,11 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_i62l5"]
 tile_size = Vector2i(128, 128)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "NotPath"
+terrain_set_0/terrain_0/color = Color(0.231373, 0.443137, 0.223529, 1)
+terrain_set_0/terrain_1/name = "Path"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_cw6fq")
 
 [sub_resource type="Curve2D" id="Curve2D_d0pqb"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5qa5jenuj477"]
+
+[ext_resource type="Texture2D" uid="uid://qfhepnqfoxml" path="res://images/sunflower/sunflower_bud.png" id="1_0hdfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrmcx"]
+size = Vector2(68, 60)
+
+[node name="Sunflower" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0hdfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_xrmcx")
