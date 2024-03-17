@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0817k1j7u7cw"]
 
-[ext_resource type="Texture2D" uid="uid://qfhepnqfoxml" path="res://images/sunflower/sunflower_bud.png" id="1_0hdfk"]
-[ext_resource type="Script" path="res://plant.gd" id="1_k51vb"]
-[ext_resource type="PackedScene" uid="uid://ch6lvbs0oxldr" path="res://health_component.tscn" id="2_ieo2w"]
-[ext_resource type="Texture2D" uid="uid://gussm55dh43v" path="res://images/sunflower/sunflower_one.png" id="3_6dap7"]
-[ext_resource type="Texture2D" uid="uid://b16o37dohwlxw" path="res://images/sunflower/sunflower_two.png" id="4_txk0t"]
-[ext_resource type="Texture2D" uid="uid://bh88gjgiotjox" path="res://images/sunflower/sunflower_projectile.png" id="5_dcsm0"]
+[ext_resource type="Script" path="res://plant.gd" id="1_vplj1"]
+[ext_resource type="Texture2D" uid="uid://qfhepnqfoxml" path="res://images/sunflower/sunflower_bud.png" id="2_fall0"]
+[ext_resource type="Texture2D" uid="uid://gussm55dh43v" path="res://images/sunflower/sunflower_one.png" id="3_4dmef"]
+[ext_resource type="Texture2D" uid="uid://b16o37dohwlxw" path="res://images/sunflower/sunflower_two.png" id="4_h6u1g"]
+[ext_resource type="Texture2D" uid="uid://bh88gjgiotjox" path="res://images/sunflower/sunflower_projectile.png" id="5_l71rd"]
+[ext_resource type="PackedScene" uid="uid://ch6lvbs0oxldr" path="res://health_component.tscn" id="6_q8u46"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mns2"]
 bg_color = Color(0.247059, 0.14902, 0.192157, 1)
@@ -21,12 +21,13 @@ border_color = Color(0.247059, 0.14902, 0.192157, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrmcx"]
 size = Vector2(68, 60)
 
-[node name="Sunflower" type="Area2D"]
-script = ExtResource("1_k51vb")
-sprites = [ExtResource("1_0hdfk"), ExtResource("3_6dap7"), ExtResource("4_txk0t")]
-projectile = ExtResource("5_dcsm0")
+[node name="Sunflower" type="Area2D" groups=["Plant"]]
+input_pickable = false
+script = ExtResource("1_vplj1")
+sprites = [ExtResource("2_fall0"), ExtResource("3_4dmef"), ExtResource("4_h6u1g")]
+projectile = ExtResource("5_l71rd")
 
-[node name="HealthComponent" parent="." instance=ExtResource("2_ieo2w")]
+[node name="HealthComponent" parent="." instance=ExtResource("6_q8u46")]
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(32, 6)
@@ -42,7 +43,7 @@ value = 0.1
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0hdfk")
+texture = ExtResource("2_fall0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
