@@ -29,42 +29,32 @@ layout_mode = 2
 
 [node name="Tabs" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 500
 
 [node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Tabs"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 51
+theme_override_font_sizes/font_size = 91
 text = "Shop"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TabBar" type="TabBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Tabs"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 66
 clip_tabs = false
 tab_count = 2
 tab_0/title = "Flowers"
-tab_1/title = "Fert"
+tab_1/title = "Fertilizer"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-alignment = 1
 
-[node name="flower1" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "flower1 "
-vertical_alignment = 1
 
-[node name="flower2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "flower2 "
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="flower3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button3" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "flower3 "
-horizontal_alignment = 1
-vertical_alignment = 1

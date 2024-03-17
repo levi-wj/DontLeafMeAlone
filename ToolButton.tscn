@@ -5,12 +5,15 @@
 [ext_resource type="Script" path="res://ToolBar.gd" id="2_7xles"]
 [ext_resource type="Texture2D" uid="uid://dclvaj3swsftp" path="res://images/tools/progressCir.png" id="4_qugwr"]
 
-[node name="TextureRect" type="TextureRect"]
+[node name="MarginContainer" type="MarginContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
 texture = ExtResource("1_r16h2")
 
-[node name="ToolButton" type="TextureButton" parent="."]
+[node name="ToolButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.046
@@ -26,7 +29,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_7xles")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="ToolButton"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect/ToolButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,11 +46,11 @@ fill_mode = 5
 texture_progress = ExtResource("4_qugwr")
 tint_progress = Color(0.286275, 0.227451, 0.141176, 0.764706)
 
-[node name="Timer" type="Timer" parent="ToolButton"]
+[node name="Timer" type="Timer" parent="TextureRect/ToolButton"]
 wait_time = 10.0
 one_shot = true
 
-[node name="Time" type="Label" parent="ToolButton"]
+[node name="Time" type="Label" parent="TextureRect/ToolButton"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -59,5 +62,5 @@ theme_override_font_sizes/font_size = 56
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[connection signal="pressed" from="ToolButton" to="ToolButton" method="_on_pressed"]
-[connection signal="timeout" from="ToolButton/Timer" to="ToolButton" method="_on_timer_timeout"]
+[connection signal="pressed" from="TextureRect/ToolButton" to="TextureRect/ToolButton" method="_on_pressed"]
+[connection signal="timeout" from="TextureRect/ToolButton/Timer" to="TextureRect/ToolButton" method="_on_timer_timeout"]
