@@ -6,7 +6,7 @@ extends Path2D
 
 @export var timeSinceLastSpeedup = -6.0
 @export var speedupInterval = 10.0
-@export var timeSinceLastSpawn = -5.0
+@export var timeSinceLastSpawn = 5.0 # used to be -5.0
 @export var spawnInterval = 11.0
 
 
