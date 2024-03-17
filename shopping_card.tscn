@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://btlmhshp43wl1"]
+
+[ext_resource type="Script" path="res://shopping_card.gd" id="1_s4wrb"]
+[ext_resource type="Texture2D" uid="uid://vgn4548ca37b" path="res://images/tileset.png" id="1_v1ojy"]
+[ext_resource type="Texture2D" uid="uid://dw0d3vm3aamy0" path="res://images/hotbar/shop_sign.png" id="2_m5l5r"]
+
+[node name="shoppingCard" type="MarginContainer"]
+offset_right = 256.0
+offset_bottom = 512.0
+script = ExtResource("1_s4wrb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_v1ojy")
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_m5l5r")
+
+[node name="Stats" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/VBoxContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Health" type="MarginContainer" parent="TextureRect/VBoxContainer/Stats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 85
+theme_override_constants/margin_bottom = 30
+
+[node name="Hp" type="Label" parent="TextureRect/VBoxContainer/Stats/VBoxContainer/Health"]
+layout_mode = 2
+text = "Health"
+
+[node name="Attack" type="MarginContainer" parent="TextureRect/VBoxContainer/Stats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="Damage" type="Label" parent="TextureRect/VBoxContainer/Stats/VBoxContainer/Attack"]
+layout_mode = 2
+text = "Attack"
+
+[node name="Range" type="MarginContainer" parent="TextureRect/VBoxContainer/Stats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="Range" type="Label" parent="TextureRect/VBoxContainer/Stats/VBoxContainer/Range"]
+layout_mode = 2
+text = "Range"
+
+[node name="Value" type="MarginContainer" parent="TextureRect/VBoxContainer/Stats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="Value" type="Label" parent="TextureRect/VBoxContainer/Stats/VBoxContainer/Value"]
+layout_mode = 2
+text = "Value"
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "vgrgfsd"
