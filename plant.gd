@@ -17,17 +17,12 @@ func _ready():
 	update_health_display()	
 	
 	
-func check_deal_damage():
-	health_component.damage(1)
-	print(health_component.current_health)
+func deal_damage(amt):
+	health_component.damage(amt)
 
 
 func update_health_display():
-		health_bar.value = health_component.get_health_percent()
-
-
-func on_damage_interval_timer_timeout():
-	check_deal_damage()
+	health_bar.value = health_component.get_health_percent()
 
 
 func on_health_change():
