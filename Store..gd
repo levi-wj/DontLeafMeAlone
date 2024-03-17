@@ -18,6 +18,7 @@ func _on_tab_bar_tab_changed(tab):
 	if tab == 0:
 		fertilizer_store.visible = false
 		flower_store.visible= true
+		
 	elif tab == 1:
 		flower_store.visible= false
 		fertilizer_store.visible = true
