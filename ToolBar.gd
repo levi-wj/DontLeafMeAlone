@@ -37,7 +37,9 @@ func set_money(amt):
 	money = amt
 	money_label.text = str(amt)
 
-
+func get_money():
+	return money
+	
 func _on_shop_button_button_down():
 	if shopMenuIsOpen:
 		shopMenu.visible = false

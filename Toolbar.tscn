@@ -1,19 +1,20 @@
 [gd_scene load_steps=13 format=3 uid="uid://bc5w158a5u3va"]
 
 [ext_resource type="PackedScene" uid="uid://dx4kiwpxjdg2w" path="res://ToolButton.tscn" id="1_gaequ"]
-[ext_resource type="Texture2D" uid="uid://dwrrqpxwelj1t" path="res://images/hotbar/hotbar.png" id="1_i6d3m"]
+[ext_resource type="Texture2D" uid="uid://cprpp1xf12qex" path="res://images/hotbar/hotbar.png" id="1_i6d3m"]
 [ext_resource type="Script" path="res://Toolbar.gd" id="1_mjwhj"]
-[ext_resource type="Texture2D" uid="uid://b28wloh2h8gct" path="res://images/hotbar/shop_sign.png" id="1_u6qly"]
+[ext_resource type="Texture2D" uid="uid://dw0d3vm3aamy0" path="res://images/hotbar/shop_sign.png" id="1_u6qly"]
 [ext_resource type="Script" path="res://ButtonClick.gd" id="4_yqq2x"]
-[ext_resource type="Texture2D" uid="uid://c8kug4273kti0" path="res://images/hotbar/hotbar_slot.png" id="5_ewwer"]
+[ext_resource type="Texture2D" uid="uid://dt2laxkmujfe7" path="res://images/hotbar/hotbar_slot.png" id="5_ewwer"]
 [ext_resource type="Texture2D" uid="uid://dxx47i0pu3yt4" path="res://images/tools/water_tool.png" id="6_sesnl"]
-[ext_resource type="Texture2D" uid="uid://7r47fdsr4o6x" path="res://images/coin_sprite.png" id="6_x3530"]
-[ext_resource type="Texture2D" uid="uid://du2rg01jce4ty" path="res://images/tools/move_tool.png" id="7_bckhn"]
-[ext_resource type="Texture2D" uid="uid://clmd5nwxswbyi" path="res://images/tools/sell_tool.png" id="7_ls3e2"]
+[ext_resource type="Texture2D" uid="uid://dy1spex0sadfy" path="res://images/coin_sprite.png" id="6_x3530"]
+[ext_resource type="Texture2D" uid="uid://ddyhajq7y2wn" path="res://images/tools/move_tool.png" id="7_bckhn"]
+[ext_resource type="Texture2D" uid="uid://bp31eqry5brg2" path="res://images/tools/sell_tool.png" id="7_ls3e2"]
 [ext_resource type="Texture2D" uid="uid://qfhepnqfoxml" path="res://images/sunflower/sunflower_bud.png" id="9_u0m0n"]
 
 [sub_resource type="SystemFont" id="SystemFont_cmmrw"]
 font_names = PackedStringArray("Cambria Math")
+subpixel_positioning = 0
 
 [node name="Toolbar" type="CanvasLayer"]
 script = ExtResource("1_mjwhj")
