@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" path="res://ToolButton.tscn" id="1_gaequ"]
 
-[node name="Toolbar" type="HBoxContainer"]
+[node name="Toolbar" type="CanvasLayer"]
+
+[node name="Toolbar" type="HBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,11 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="Toolbar"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Toolbar/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,31 +26,23 @@ grow_vertical = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Toolbar/Panel/MarginContainer"]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="Toolbar/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Store"
 
-[node name="ToolButton" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton" parent="Toolbar/Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ToolButton2" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton2" parent="Toolbar/Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ToolButton3" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="ToolButton4" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="ToolButton5" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton3" parent="Toolbar/Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4

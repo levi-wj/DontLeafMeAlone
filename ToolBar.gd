@@ -24,3 +24,5 @@ func _on_timer_timeout():
 	time.text = ""
 	set_process(false)
 	
+	
+	

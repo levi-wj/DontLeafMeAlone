@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bgf5rnvoh2h56"]
+
+[node name="ShopMenu" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Tabs" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Tabs"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabBar" type="TabBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Tabs"]
+layout_mode = 2
+clip_tabs = false
+tab_count = 2
+tab_0/title = "Flowers"
+tab_1/title = "Fert"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="flower1" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "flower1 "
+vertical_alignment = 1
+
+[node name="flower2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "flower2 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="flower3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "flower3 "
+horizontal_alignment = 1
+vertical_alignment = 1

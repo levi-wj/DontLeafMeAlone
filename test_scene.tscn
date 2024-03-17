@@ -74,6 +74,4 @@ rotates = false
 loop = false
 move_speed = 515
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Toolbar" parent="CanvasLayer" instance=ExtResource("4_fdr3u")]
+[node name="Toolbar" parent="." instance=ExtResource("4_fdr3u")]
