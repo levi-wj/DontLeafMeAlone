@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bc5w158a5u3va"]
+[gd_scene load_steps=9 format=3 uid="uid://bc5w158a5u3va"]
 
 [ext_resource type="PackedScene" uid="uid://dx4kiwpxjdg2w" path="res://ToolButton.tscn" id="1_gaequ"]
 [ext_resource type="Texture2D" uid="uid://dwrrqpxwelj1t" path="res://images/hotbar/hotbar.png" id="1_i6d3m"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b28wloh2h8gct" path="res://images/hotbar/shop_sign.png" id="1_u6qly"]
 [ext_resource type="Script" path="res://shopButton.gd" id="2_02u17"]
 [ext_resource type="Texture2D" uid="uid://c8kug4273kti0" path="res://images/hotbar/hotbar_slot.png" id="5_ewwer"]
+[ext_resource type="Texture2D" uid="uid://dxx47i0pu3yt4" path="res://images/tools/water_tool.png" id="6_sesnl"]
+[ext_resource type="Texture2D" uid="uid://clmd5nwxswbyi" path="res://images/tools/sell_tool.png" id="7_ls3e2"]
 
 [node name="Toolbar" type="CanvasLayer"]
 script = ExtResource("1_mjwhj")
@@ -48,24 +50,26 @@ theme_override_constants/margin_right = 16
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 
-[node name="ToolButton2" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton1" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 custom_minimum_size = Vector2(110, 124)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/margin_top = 11
 setModeTo = "water"
+btn_image = ExtResource("6_sesnl")
 
-[node name="ToolButton3" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton2" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4
 setModeTo = "move"
 
-[node name="ToolButton" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton3" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 custom_minimum_size = Vector2(0, 124)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/margin_bottom = 15
 setModeTo = "sell"
+btn_image = ExtResource("7_ls3e2")
 
 [node name="TextureRect" type="TextureRect" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

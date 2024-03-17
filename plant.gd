@@ -3,6 +3,7 @@ extends Area2D
 signal take_DMG
 
 
+
 @onready var health_component = $HealthComponent
 @onready var health_bar = $HealthBar
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx4kiwpxjdg2w"]
 
-[ext_resource type="Texture2D" uid="uid://clmd5nwxswbyi" path="res://images/tools/sell_tool.png" id="1_l0ari"]
 [ext_resource type="Texture2D" uid="uid://c8kug4273kti0" path="res://images/hotbar/hotbar_slot.png" id="1_r16h2"]
 [ext_resource type="Script" path="res://ToolButton.gd" id="3_5175g"]
+[ext_resource type="Texture2D" uid="uid://dxx47i0pu3yt4" path="res://images/tools/water_tool.png" id="3_fefur"]
 [ext_resource type="Texture2D" uid="uid://dclvaj3swsftp" path="res://images/tools/progressCir.png" id="4_qugwr"]
 [ext_resource type="Texture2D" uid="uid://gfcblbuslttd" path="res://images/hotbar/hover_indicator.png" id="5_mr17e"]
 
@@ -24,7 +24,7 @@ offset_right = 100.0
 offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_l0ari")
+texture_normal = ExtResource("3_fefur")
 ignore_texture_size = true
 stretch_mode = 0
 

@@ -23,5 +23,4 @@ func _process(delta):
 	if (timeSinceLastSpeedup > speedupInterval):
 		spawnInterval /= 1.2
 		timeSinceLastSpeedup = 0
-		print(spawnInterval)
 		
