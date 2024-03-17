@@ -1,20 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://da681bgj6w2dq"]
+[gd_scene load_steps=6 format=3 uid="uid://da681bgj6w2dq"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_5fa8c"]
-[ext_resource type="Texture2D" uid="uid://bgc82ultmqoq0" path="res://images/fly_sprite.png" id="2_66b6u"]
+[ext_resource type="Texture2D" uid="uid://binuymb21negi" path="res://images/fly/fly_sprite.png" id="2_7n5on"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_348vg"]
-size = Vector2(60, 56)
+size = Vector2(67, 39)
+
+[sub_resource type="Animation" id="Animation_3sfbx"]
+resource_name = "fly"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32ac7"]
+_data = {
+"fly": SubResource("Animation_3sfbx")
+}
 
 [node name="PathFollow2D" type="PathFollow2D"]
+position = Vector2(247, 161)
+rotates = false
+loop = false
 script = ExtResource("1_5fa8c")
+move_speed = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_66b6u")
+texture = ExtResource("2_7n5on")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5, 8)
+position = Vector2(1.5, 8.5)
 shape = SubResource("RectangleShape2D_348vg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fly"
+libraries = {
+"": SubResource("AnimationLibrary_32ac7")
+}

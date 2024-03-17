@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0817k1j7u7cw"]
+[gd_scene load_steps=10 format=3 uid="uid://b0817k1j7u7cw"]
 
 [ext_resource type="Texture2D" uid="uid://qfhepnqfoxml" path="res://images/sunflower/sunflower_bud.png" id="1_0hdfk"]
 [ext_resource type="Script" path="res://plant.gd" id="1_k51vb"]
 [ext_resource type="PackedScene" uid="uid://ch6lvbs0oxldr" path="res://health_component.tscn" id="2_ieo2w"]
+[ext_resource type="Texture2D" uid="uid://gussm55dh43v" path="res://images/sunflower/sunflower_one.png" id="3_6dap7"]
+[ext_resource type="Texture2D" uid="uid://b16o37dohwlxw" path="res://images/sunflower/sunflower_two.png" id="4_txk0t"]
+[ext_resource type="Texture2D" uid="uid://bh88gjgiotjox" path="res://images/sunflower/sunflower_projectile.png" id="5_dcsm0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mns2"]
 bg_color = Color(0.247059, 0.14902, 0.192157, 1)
@@ -20,6 +23,8 @@ size = Vector2(68, 60)
 
 [node name="Sunflower" type="Area2D"]
 script = ExtResource("1_k51vb")
+sprites = [ExtResource("1_0hdfk"), ExtResource("3_6dap7"), ExtResource("4_txk0t")]
+projectile = ExtResource("5_dcsm0")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_ieo2w")]
 

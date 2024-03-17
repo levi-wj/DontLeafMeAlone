@@ -21,6 +21,16 @@ func set_mode(new_mode, new_button):
 func tilemap_event_happened():
 	if active_button:
 		active_button.start_timer()
+		
+func is_active_tool_ready():
+	if (active_button):
+		return !active_button.is_cooldown_going
+	else:
+		return false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
 
 
 func _on_shop_button_button_down():
