@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://da681bgj6w2dq"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_5fa8c"]
-[ext_resource type="Texture2D" uid="uid://bgc82ultmqoq0" path="res://images/fly_sprite.png" id="2_66b6u"]
+[ext_resource type="Texture2D" uid="uid://cye00vdg8fntm" path="res://images/fly_sprite.png" id="2_66b6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_348vg"]
 size = Vector2(60, 56)

@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc5w158a5u3va"]
+[gd_scene load_steps=7 format=3 uid="uid://bc5w158a5u3va"]
 
 [ext_resource type="PackedScene" uid="uid://dx4kiwpxjdg2w" path="res://ToolButton.tscn" id="1_gaequ"]
-[ext_resource type="Texture2D" uid="uid://cnqrethk1nyru" path="res://images/hotbar/hotbar.png" id="1_i6d3m"]
-[ext_resource type="Texture2D" uid="uid://b5nfah0hkk0k3" path="res://images/hotbar/shop_sign.png" id="1_u6qly"]
+[ext_resource type="Texture2D" uid="uid://dwrrqpxwelj1t" path="res://images/hotbar/hotbar.png" id="1_i6d3m"]
+[ext_resource type="Script" path="res://Toolbar.gd" id="1_mjwhj"]
+[ext_resource type="Texture2D" uid="uid://b28wloh2h8gct" path="res://images/hotbar/shop_sign.png" id="1_u6qly"]
 [ext_resource type="Script" path="res://shopButton.gd" id="2_02u17"]
-[ext_resource type="Texture2D" uid="uid://hn5faqa1adji" path="res://images/hotbar/hotbar_slot.png" id="5_ewwer"]
+[ext_resource type="Texture2D" uid="uid://c8kug4273kti0" path="res://images/hotbar/hotbar_slot.png" id="5_ewwer"]
 
 [node name="Toolbar" type="CanvasLayer"]
+script = ExtResource("1_mjwhj")
 
 [node name="Toolbar" type="HBoxContainer" parent="."]
 anchors_preset = 15
@@ -17,6 +19,7 @@ grow_vertical = 2
 alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="Toolbar"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 texture = ExtResource("1_i6d3m")
 
@@ -46,17 +49,23 @@ custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 
 [node name="ToolButton2" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+custom_minimum_size = Vector2(110, 124)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/margin_top = 11
+setModeTo = "water"
 
 [node name="ToolButton3" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4
+setModeTo = "move"
 
 [node name="ToolButton" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+custom_minimum_size = Vector2(0, 124)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/margin_bottom = 18
+theme_override_constants/margin_bottom = 15
+setModeTo = "sell"
 
 [node name="TextureRect" type="TextureRect" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

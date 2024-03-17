@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgsv3vlwd4uqe"
-path="res://.godot/imported/tulip_one.png-f666ecc5a8a75c3db505a8a2fff8769d.ctex"
+uid="uid://cypeg0ojg7mfh"
+path="res://.godot/imported/fertilizer_tab.png-eee073c91b76906e66c2e53829b2d434.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tulip/tulip_one.png"
-dest_files=["res://.godot/imported/tulip_one.png-f666ecc5a8a75c3db505a8a2fff8769d.ctex"]
+source_file="res://images/shop/fertilizer_tab.png"
+dest_files=["res://.godot/imported/fertilizer_tab.png-eee073c91b76906e66c2e53829b2d434.ctex"]
 
 [params]
 

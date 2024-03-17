@@ -1,46 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx4kiwpxjdg2w"]
+[gd_scene load_steps=6 format=3 uid="uid://dx4kiwpxjdg2w"]
 
-[ext_resource type="Texture2D" uid="uid://rryagkvrq14d" path="res://images/tools/sell_tool.png" id="1_l0ari"]
-[ext_resource type="Texture2D" uid="uid://hn5faqa1adji" path="res://images/hotbar/hotbar_slot.png" id="1_r16h2"]
-[ext_resource type="Script" path="res://ToolBar.gd" id="2_7xles"]
+[ext_resource type="Texture2D" uid="uid://clmd5nwxswbyi" path="res://images/tools/sell_tool.png" id="1_l0ari"]
+[ext_resource type="Texture2D" uid="uid://c8kug4273kti0" path="res://images/hotbar/hotbar_slot.png" id="1_r16h2"]
+[ext_resource type="Script" path="res://ToolButton.gd" id="3_5175g"]
 [ext_resource type="Texture2D" uid="uid://dclvaj3swsftp" path="res://images/tools/progressCir.png" id="4_qugwr"]
+[ext_resource type="Texture2D" uid="uid://gfcblbuslttd" path="res://images/hotbar/hover_indicator.png" id="5_mr17e"]
 
 [node name="MarginContainer" type="MarginContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(110, 110)
+offset_right = 110.0
+offset_bottom = 110.0
+script = ExtResource("3_5175g")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("1_r16h2")
 
 [node name="ToolButton" type="TextureButton" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.046
-anchor_bottom = 0.08
+layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 80.584
-offset_bottom = 77.32
+offset_right = 100.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_l0ari")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("2_7xles")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect/ToolButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 5915.0
-offset_bottom = 5915.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5926.0
+offset_bottom = 5926.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.016, 0.016)
+scale = Vector2(0.015, 0.015)
 step = 0.05
 fill_mode = 5
 texture_progress = ExtResource("4_qugwr")
@@ -62,5 +61,10 @@ theme_override_font_sizes/font_size = 56
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[connection signal="pressed" from="TextureRect/ToolButton" to="TextureRect/ToolButton" method="_on_pressed"]
-[connection signal="timeout" from="TextureRect/ToolButton/Timer" to="TextureRect/ToolButton" method="_on_timer_timeout"]
+[node name="ActiveIndicator" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("5_mr17e")
+
+[connection signal="pressed" from="TextureRect/ToolButton" to="." method="_on_tool_button_pressed"]
+[connection signal="timeout" from="TextureRect/ToolButton/Timer" to="." method="_on_timer_timeout"]

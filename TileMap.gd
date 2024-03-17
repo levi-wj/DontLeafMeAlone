@@ -2,11 +2,11 @@ extends TileMap
 
 const MAP_SIZE = {'X': 14, 'Y': 8}
 const TILE_SIZE = 128
-enum {MODE_PLANT, MODE_WATER, MODE_MOVE, MODE_SELL}
+
 
 @onready var sunflower = preload("res://sunflower.tscn")
+@onready var toolbar = $"../Toolbar"
 
-var mode = MODE_PLANT
 var plants = []
 
 func _ready():
@@ -14,9 +14,6 @@ func _ready():
 		plants.append([])
 		for y in MAP_SIZE.X:
 			plants[x].append(0)
-			
-func set_mode(new_mode):
-	mode = new_mode
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -26,6 +23,7 @@ func _unhandled_input(event):
 		# Check that click is in playable area
 		if (tile_pos[0] <= MAP_SIZE.X and tile_pos[1] <= MAP_SIZE.Y):
 			var is_path = (get_cell_tile_data(0, tile_pos).terrain_set == 0)
+			toolbar.tilemap_event_happened()
 			if (is_path):
 				# Check that the tile is unoccupied
 				if (plants[tile_pos[1]][tile_pos[0]] == 0):
