@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://btlmhshp43wl1"]
 
 [ext_resource type="Script" path="res://shopping_card.gd" id="1_s4wrb"]
-[ext_resource type="Texture2D" uid="uid://vgn4548ca37b" path="res://images/tileset.png" id="1_v1ojy"]
+[ext_resource type="Texture2D" uid="uid://c34p18jmkyasw" path="res://images/tileset.png" id="1_v1ojy"]
 [ext_resource type="Texture2D" uid="uid://dw0d3vm3aamy0" path="res://images/hotbar/shop_sign.png" id="2_m5l5r"]
 
 [node name="shoppingCard" type="MarginContainer"]

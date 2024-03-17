@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://4fdn1ik7vm4i"]
+[gd_scene load_steps=9 format=3 uid="uid://4fdn1ik7vm4i"]
 
 [ext_resource type="Texture2D" uid="uid://c34p18jmkyasw" path="res://images/tileset.png" id="1_ncd1v"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_nhcxl"]
 [ext_resource type="Script" path="res://Spawner.gd" id="3_1mren"]
 [ext_resource type="PackedScene" uid="uid://bc5w158a5u3va" path="res://Toolbar.tscn" id="4_fdr3u"]
+[ext_resource type="PackedScene" uid="uid://bgf5rnvoh2h56" path="res://shop_menu.tscn" id="5_77gpj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw6fq"]
 texture = ExtResource("1_ncd1v")
@@ -70,3 +71,6 @@ curve = SubResource("Curve2D_d0pqb")
 script = ExtResource("3_1mren")
 
 [node name="Toolbar" parent="." instance=ExtResource("4_fdr3u")]
+
+[node name="ShopMenu" parent="." instance=ExtResource("5_77gpj")]
+visible = false

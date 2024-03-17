@@ -2,6 +2,12 @@ extends CanvasLayer
 
 var mode = '' # Can be water, plant, move, sell, or ''
 var active_button = null
+var shopMenuIsOpen = false
+
+
+@onready var shopMenu = $"../ShopMenu"
+@onready var shopButton = $Toolbar/TextureRect/VBoxContainer/shopButton
+
 
 func set_mode(new_mode, new_button):
 	if (new_mode != mode):
@@ -13,13 +19,14 @@ func set_mode(new_mode, new_button):
 		print(mode)
 		
 func tilemap_event_happened():
-	active_button.start_timer()
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+	if active_button:
+		active_button.start_timer()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_shop_button_button_down():
+	if shopMenuIsOpen:
+		shopMenu.visible = false
+		shopMenuIsOpen = false
+	else:
+		shopMenu.visible = true
+		shopMenuIsOpen = true
