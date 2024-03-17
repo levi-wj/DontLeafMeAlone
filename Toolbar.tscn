@@ -109,7 +109,7 @@ theme_override_constants/margin_bottom = 15
 setModeTo = "sell"
 btn_image = ExtResource("7_ls3e2")
 
-[node name="solt1" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton4" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 size_flags_vertical = 4
@@ -117,15 +117,13 @@ setModeTo = "plant"
 plant = ExtResource("11_6t6hb")
 btn_image = ExtResource("9_u0m0n")
 
-[node name="slot2" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
-custom_minimum_size = Vector2(0, 110)
+[node name="TextureRect2" type="TextureRect" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 4
+texture = ExtResource("5_ewwer")
 
-[node name="slot3" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
-custom_minimum_size = Vector2(0, 110)
+[node name="TextureRect3" type="TextureRect" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 4
+texture = ExtResource("5_ewwer")
 
 [connection signal="button_down" from="Toolbar/TextureRect/VBoxContainer/shopButton" to="." method="_on_shop_button_button_down"]
 [connection signal="button_down" from="Toolbar/TextureRect/VBoxContainer/shopButton" to="Toolbar/TextureRect/VBoxContainer/shopButton" method="_on_button_down"]
