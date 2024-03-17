@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://da681bgj6w2dq" path="res://fly_enemy.tscn" id="1_dauns"]
 [ext_resource type="Texture2D" uid="uid://vgn4548ca37b" path="res://images/tileset.png" id="1_ncd1v"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_nhcxl"]
+[ext_resource type="Script" path="res://Spawner.gd" id="3_1mren"]
 [ext_resource type="PackedScene" uid="uid://bc5w158a5u3va" path="res://Toolbar.tscn" id="4_fdr3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw6fq"]
@@ -50,7 +51,7 @@ sources/1 = SubResource("TileSetAtlasSource_cw6fq")
 
 [sub_resource type="Curve2D" id="Curve2D_d0pqb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -411.512, 556.316, 0, 0, 0, 0, 1167, 569.945, 0, 0, 0, 0, 1183.09, -100.413, 0, 0, 0, 0, -153.004, -84.2292, 0, 0, 0, 0, -156.791, 344.221, 0, 0, 0, 0, 925.534, 342.517, 0, 0, 0, 0, 923.64, 125.311, 0, 0, 0, 0, 235.232, 119.348)
+"points": PackedVector2Array(0, 0, 0, 0, -411.512, 556.316, 0, 0, 0, 0, 1185.94, 564.834, 0, 0, 0, 0, 1164.16, -95.3024, 0, 0, 0, 0, -151.11, -89.3399, 0, 0, 0, 0, -159.632, 345.924, 0, 0, 0, 0, 939.737, 339.962, 0, 0, 0, 0, 925.534, 122.755, 0, 0, 0, 0, 235.232, 119.348)
 }
 point_count = 8
 
@@ -67,11 +68,6 @@ script = ExtResource("2_nhcxl")
 position = Vector2(360.581, 300.885)
 scale = Vector2(1.05606, 1.174)
 curve = SubResource("Curve2D_d0pqb")
-
-[node name="fly_enemy" parent="Path2D" instance=ExtResource("1_dauns")]
-position = Vector2(-411.512, 556.316)
-rotates = false
-loop = false
-move_speed = 515
+script = ExtResource("3_1mren")
 
 [node name="Toolbar" parent="." instance=ExtResource("4_fdr3u")]

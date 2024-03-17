@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://duurrulcqi2rf"
+=======
+uid="uid://csbsakjqyup1t"
+>>>>>>> Stashed changes
 path="res://.godot/imported/lily_bud.png-685c62839978fce0635b645597281224.ctex"
 metadata={
 "vram_texture": false

@@ -1,6 +1,6 @@
 extends TileMap
 
-const MAP_SIZE = {'X': 20, 'Y': 8}
+const MAP_SIZE = {'X': 14, 'Y': 8}
 const TILE_SIZE = 128
 enum {MODE_PLANT, MODE_WATER, MODE_MOVE, MODE_SELL}
 
