@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://4fdn1ik7vm4i"]
 
 [ext_resource type="PackedScene" uid="uid://da681bgj6w2dq" path="res://fly_enemy.tscn" id="1_dauns"]
-[ext_resource type="Texture2D" uid="uid://c34p18jmkyasw" path="res://images/tileset.png" id="1_ncd1v"]
+[ext_resource type="Texture2D" uid="uid://vgn4548ca37b" path="res://images/tileset.png" id="1_ncd1v"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_nhcxl"]
 [ext_resource type="PackedScene" uid="uid://bc5w158a5u3va" path="res://Toolbar.tscn" id="4_fdr3u"]
 

@@ -1,49 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgei5i5nsh5qx"]
+[gd_scene load_steps=5 format=3 uid="uid://dx4kiwpxjdg2w"]
 
-[ext_resource type="Texture2D" uid="uid://dq8vjmqtyyh0s" path="res://images/fly_sprite.png" id="1_p2o4h"]
+[ext_resource type="Texture2D" uid="uid://rryagkvrq14d" path="res://images/tools/sell_tool.png" id="1_l0ari"]
+[ext_resource type="Texture2D" uid="uid://hn5faqa1adji" path="res://images/hotbar/hotbar_slot.png" id="1_r16h2"]
 [ext_resource type="Script" path="res://ToolBar.gd" id="2_7xles"]
+[ext_resource type="Texture2D" uid="uid://dclvaj3swsftp" path="res://images/tools/progressCir.png" id="4_qugwr"]
 
-[sub_resource type="Gradient" id="Gradient_2f7b0"]
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_r16h2")
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sybp3"]
-gradient = SubResource("Gradient_2f7b0")
-width = 96
-height = 96
-fill_to = Vector2(0, 0)
-
-[node name="ToolButton" type="TextureButton"]
-custom_minimum_size = Vector2(96, 96)
+[node name="ToolButton" type="TextureButton" parent="."]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.046
 anchor_bottom = 0.08
-offset_right = -0.320007
-offset_bottom = -0.400009
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 80.584
+offset_bottom = 77.32
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_p2o4h")
+texture_normal = ExtResource("1_l0ari")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_7xles")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ToolButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 5915.0
+offset_bottom = 5915.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.016, 0.016)
 step = 0.05
 fill_mode = 5
-texture_progress = SubResource("GradientTexture2D_sybp3")
-tint_under = Color(0, 0, 0, 0.470588)
-tint_over = Color(0, 0, 0, 0.431373)
-tint_progress = Color(0, 0, 0, 0.713726)
+texture_progress = ExtResource("4_qugwr")
+tint_progress = Color(0.286275, 0.227451, 0.141176, 0.764706)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+[node name="Timer" type="Timer" parent="ToolButton"]
+wait_time = 10.0
 one_shot = true
 
-[node name="Time" type="Label" parent="."]
+[node name="Time" type="Label" parent="ToolButton"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,5 +59,5 @@ theme_override_font_sizes/font_size = 56
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ToolButton" to="ToolButton" method="_on_pressed"]
+[connection signal="timeout" from="ToolButton/Timer" to="ToolButton" method="_on_timer_timeout"]

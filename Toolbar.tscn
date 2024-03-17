@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc5w158a5u3va"]
+[gd_scene load_steps=6 format=3 uid="uid://bc5w158a5u3va"]
 
-[ext_resource type="PackedScene" path="res://ToolButton.tscn" id="1_gaequ"]
+[ext_resource type="PackedScene" uid="uid://dx4kiwpxjdg2w" path="res://ToolButton.tscn" id="1_gaequ"]
+[ext_resource type="Texture2D" uid="uid://cnqrethk1nyru" path="res://images/hotbar/hotbar.png" id="1_i6d3m"]
+[ext_resource type="Texture2D" uid="uid://b5nfah0hkk0k3" path="res://images/hotbar/shop_sign.png" id="1_u6qly"]
+[ext_resource type="Script" path="res://shopButton.gd" id="2_02u17"]
+[ext_resource type="Texture2D" uid="uid://hn5faqa1adji" path="res://images/hotbar/hotbar_slot.png" id="5_ewwer"]
 
 [node name="Toolbar" type="CanvasLayer"]
 
@@ -12,37 +16,58 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="Panel" type="Panel" parent="Toolbar"]
-custom_minimum_size = Vector2(128, 0)
+[node name="TextureRect" type="TextureRect" parent="Toolbar"]
 layout_mode = 2
+texture = ExtResource("1_i6d3m")
 
-[node name="MarginContainer" type="MarginContainer" parent="Toolbar/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Toolbar/TextureRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -136.0
+grow_horizontal = 0
 grow_vertical = 2
+rotation = -0.00247779
+
+[node name="shopButton" type="Button" parent="Toolbar/TextureRect/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_u6qly")
+script = ExtResource("2_02u17")
+
+[node name="MarginContainer" type="MarginContainer" parent="Toolbar/TextureRect/VBoxContainer"]
+layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Toolbar/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Toolbar/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Store"
-
-[node name="ToolButton" parent="Toolbar/Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton2" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ToolButton2" parent="Toolbar/Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton3" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ToolButton3" parent="Toolbar/Panel/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
+[node name="ToolButton" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_gaequ")]
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ewwer")
+
+[node name="TextureRect2" type="TextureRect" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ewwer")
+
+[node name="TextureRect3" type="TextureRect" parent="Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ewwer")
+
+[connection signal="button_down" from="Toolbar/TextureRect/VBoxContainer/shopButton" to="Toolbar/TextureRect/VBoxContainer/shopButton" method="_on_button_down"]
+[connection signal="button_up" from="Toolbar/TextureRect/VBoxContainer/shopButton" to="Toolbar/TextureRect/VBoxContainer/shopButton" method="_on_button_up"]
