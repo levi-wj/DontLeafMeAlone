@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ditjad3ok1yns"
-path="res://.godot/imported/tileset.png-a39e944f25b35d62f55d4f98a36e2b5e.ctex"
+uid="uid://l2sefctfqh8t"
+path="res://.godot/imported/tulip_bud.png-ed834d0e441837ba68bf6253900501a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tileset.png"
-dest_files=["res://.godot/imported/tileset.png-a39e944f25b35d62f55d4f98a36e2b5e.ctex"]
+source_file="res://images/tulip/tulip_bud.png"
+dest_files=["res://.godot/imported/tulip_bud.png-ed834d0e441837ba68bf6253900501a7.ctex"]
 
 [params]
 
