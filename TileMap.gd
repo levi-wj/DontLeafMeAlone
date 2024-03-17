@@ -49,7 +49,7 @@ func _unhandled_input(event):
 
 
 func plant(tile_pos):
-	var plant_inst = sunflower.instantiate()
+	var plant_inst = toolbar.selected_plant.instantiate()
 	get_tree().get_root().add_child(plant_inst)
 	plant_inst.global_position = Vector2((tile_pos[0] * TILE_SIZE) + TILE_SIZE / 2, (tile_pos[1] * TILE_SIZE) + TILE_SIZE / 2)
 	plants[tile_pos[1]][tile_pos[0]] = plant_inst

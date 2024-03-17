@@ -17,7 +17,7 @@ extends CanvasLayer
 @export var fert_speed_price = 1
 @export var fert_health_price = 1
 
-
+var SunFlower : PackedScene = preload("res://plants/sunflower.tscn")
 
 var money = 0
 
@@ -44,33 +44,38 @@ func _on_tab_bar_tab_changed(tab):
 func spend_money(amt):
 	tool_bar.set_money(money - amt)
 	
+
+func set_toolbar_slot(mode, object):
+	return tool_bar.set_toolbar_slot(mode, object)
 	
+
 func _on_tulips_button_up():
-	if (money >= tulips_price):
+	if (money >= tulips_price && set_toolbar_slot("plant", SunFlower)):
 		spend_money(tulips_price)
 	else:
 		return
 
 func _on_lily_button_up():
-	if (money >= lily_price):
+	if (money >= lily_price && set_toolbar_slot("plant", SunFlower)):
 		spend_money(lily_price)
+		tool_bar.set_mode_to_empty_slot("plant")
 	else:
 		return
 
 func _on_sun_flower_button_up():
-	if (money >= sun_flower_price):
+	if (money >= sun_flower_price && set_toolbar_slot("plant", SunFlower)):
 		spend_money(sun_flower_price)
 	else:
 		return
 		
 func _on_fertilizer_health_button_up():
-	if (money >= fert_health_price):
+	if (money >= fert_health_price && set_toolbar_slot("plant", SunFlower)):
 		spend_money(fert_health_price)
 	else:
 		return
 
 func _on_fertilizer_speed_button_up():
-	if (money >= fert_speed_price):
+	if (money >= fert_speed_price && set_toolbar_slot("plant", SunFlower)):
 		spend_money(fert_speed_price)
 	else:
 		return

@@ -1,6 +1,7 @@
 extends MarginContainer
 
-@export var setModeTo = ''
+@export var setModeTo = ""
+@export var plant : PackedScene
 @export var btn_image: Texture2D
 
 @onready var progress_bar = $TextureRect/ToolButton/TextureProgressBar
@@ -35,4 +36,18 @@ func start_timer():
 	is_cooldown_going = true
 	
 func _on_tool_button_pressed():
-	toolbar.set_mode(setModeTo, self)
+	toolbar.set_mode(setModeTo, self, plant)
+
+func is_mode_empty():
+	if setModeTo == "":
+		return true
+	else:
+		return false
+		
+func set_mode_to(mode, object):
+	setModeTo = mode
+	plant = object
+	set_btn_img()
+
+func set_btn_img():
+	btn_image = preload("res://images/sunflower/sunflower_bud.png")
