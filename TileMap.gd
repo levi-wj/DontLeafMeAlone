@@ -4,7 +4,7 @@ const MAP_SIZE = {'X': 14, 'Y': 8}
 const TILE_SIZE = 128
 
 
-@onready var sunflower = preload("res://sunflower.tscn")
+@onready var sunflower = preload("res://plants/sunflower.tscn")
 @onready var toolbar = $"../Toolbar"
 
 var plants = []
@@ -33,14 +33,19 @@ func _unhandled_input(event):
 			var is_path = (get_cell_tile_data(0, tile_pos).terrain_set == 0)
 			var is_tile_occupied = (plants[tile_pos[1]][tile_pos[0]] != null);
 			
-			toolbar.tilemap_event_happened()
 			if (is_path):
 				if (toolbar.mode == 'water'):
 					if (is_tile_occupied):
 						water(tile_pos)
+						toolbar.tilemap_event_happened()
 				elif (toolbar.mode == 'plant'):
 					if (!is_tile_occupied):
 						plant(tile_pos)
+						toolbar.tilemap_event_happened()
+				elif (toolbar.mode == 'sell'):
+					if (is_tile_occupied):
+						sell(tile_pos)
+						toolbar.tilemap_event_happened()
 
 
 func plant(tile_pos):
@@ -51,3 +56,10 @@ func plant(tile_pos):
 
 func water(tile_pos):
 	plants[tile_pos[1]][tile_pos[0]].grow()
+	
+func sell(tile_pos):
+	var plant = plants[tile_pos[1]][tile_pos[0]]
+	
+	plant.queue_free()
+	plants[tile_pos[1]][tile_pos[0]] = null
+

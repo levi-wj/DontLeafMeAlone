@@ -1,13 +1,18 @@
 extends CanvasLayer
 
+const START_MONEY = 4
+
 var mode = '' # Can be water, plant, move, sell, or ''
 var active_button = null
 var shopMenuIsOpen = false
-
+var money = 0
 
 @onready var shopMenu = $"../ShopMenu"
 @onready var shopButton = $Toolbar/TextureRect/VBoxContainer/shopButton
+@onready var money_label = $Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/Money/Label
 
+func _ready():
+	set_money(START_MONEY)
 
 func set_mode(new_mode, new_button):
 	if (new_mode != mode):
@@ -28,9 +33,9 @@ func is_active_tool_ready():
 	else:
 		return false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func set_money(amt):
+	money = amt
+	money_label.text = str(amt)
 
 
 func _on_shop_button_button_down():

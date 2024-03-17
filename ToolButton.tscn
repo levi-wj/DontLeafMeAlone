@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx4kiwpxjdg2w"]
 
-[ext_resource type="Texture2D" uid="uid://dt2laxkmujfe7" path="res://images/hotbar/hotbar_slot.png" id="1_r16h2"]
+[ext_resource type="Texture2D" uid="uid://c8kug4273kti0" path="res://images/hotbar/hotbar_slot.png" id="1_r16h2"]
 [ext_resource type="Script" path="res://ToolButton.gd" id="3_5175g"]
 [ext_resource type="Texture2D" uid="uid://dxx47i0pu3yt4" path="res://images/tools/water_tool.png" id="3_fefur"]
 [ext_resource type="Texture2D" uid="uid://dclvaj3swsftp" path="res://images/tools/progressCir.png" id="4_qugwr"]
