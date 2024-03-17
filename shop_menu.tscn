@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgf5rnvoh2h56"]
+[gd_scene load_steps=10 format=3 uid="uid://bgf5rnvoh2h56"]
 
+[ext_resource type="Script" path="res://Store..gd" id="1_3xhxe"]
 [ext_resource type="Texture2D" uid="uid://dbfwe5jsr84a" path="res://images/shop/shop_background.png" id="1_ttety"]
 [ext_resource type="Texture2D" uid="uid://btpte3c5js622" path="res://images/shop/flowers_tab.png" id="2_yvby7"]
 [ext_resource type="Texture2D" uid="uid://3sdbgcer12v1" path="res://images/shop/fertilizer_tab.png" id="3_ypcfj"]
+[ext_resource type="Texture2D" uid="uid://ca3yl1i0q77aj" path="res://images/tulip/tulip_two.png" id="5_w1sck"]
+[ext_resource type="Texture2D" uid="uid://rwn5dhnyl415" path="res://images/lily/lily_two.png" id="6_7hysp"]
+[ext_resource type="Texture2D" uid="uid://b16o37dohwlxw" path="res://images/sunflower/sunflower_two.png" id="7_3yifj"]
+[ext_resource type="Texture2D" uid="uid://bj88t0mbok76r" path="res://images/fertilizer/fertilizer_health.png" id="8_1rymt"]
+[ext_resource type="Texture2D" uid="uid://c0jhlb4b53eky" path="res://images/fertilizer/fertilizer_speed.png" id="9_2c244"]
 
 [node name="ShopMenu" type="CanvasLayer"]
+script = ExtResource("1_3xhxe")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 8
@@ -62,15 +69,33 @@ tab_0/icon = ExtResource("2_yvby7")
 tab_1/title = ""
 tab_1/icon = ExtResource("3_ypcfj")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="FlowerStore" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Tulips" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/FlowerStore"]
 layout_mode = 2
+icon = ExtResource("5_w1sck")
 
-[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Lily" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/FlowerStore"]
 layout_mode = 2
+icon = ExtResource("6_7hysp")
 
-[node name="Button3" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="SunFlower" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/FlowerStore"]
 layout_mode = 2
+icon = ExtResource("7_3yifj")
+
+[node name="FertilizerStore" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FertilizerHealth" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/FertilizerStore"]
+layout_mode = 2
+icon = ExtResource("8_1rymt")
+
+[node name="FertilizerSpeed" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/FertilizerStore"]
+layout_mode = 2
+icon = ExtResource("9_2c244")
+
+[connection signal="tab_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Tabs/TabBar" to="." method="_on_tab_bar_tab_changed"]
