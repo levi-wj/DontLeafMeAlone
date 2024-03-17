@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4b83miv5xe3"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_5xwgj"]
+[ext_resource type="Texture2D" uid="uid://bh88gjgiotjox" path="res://images/sunflower/sunflower_projectile.png" id="2_rtcx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou47k"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_5xwgj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ou47k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rtcx3")
+offset = Vector2(0, 26.47)

@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 @export var move_speed = 50
-@export var health = 100
+@export var health = 2
 @export var attack_str = 2
 
 var last_frame_pos
@@ -11,6 +11,11 @@ var target_plant = null
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	move_speed += rng.randf_range(-5.0, 5.0)
+	
+func take_damage(amt):
+	health -= amt
+	if amt <= 0:
+		queue_free()
 
 func _physics_process(delta):
 	if !attacking:
