@@ -58,7 +58,6 @@ func _on_tulips_button_up():
 func _on_lily_button_up():
 	if (money >= lily_price && set_toolbar_slot("plant", SunFlower)):
 		spend_money(lily_price)
-		tool_bar.set_mode_to_empty_slot("plant")
 	else:
 		return
 

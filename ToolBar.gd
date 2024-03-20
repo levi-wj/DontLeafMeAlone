@@ -12,7 +12,7 @@ var money = 0
 @onready var shopButton = $Toolbar/TextureRect/VBoxContainer/shopButton
 @onready var money_label = $Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/Money/Label
 
-@onready var slot1=$Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/solt1
+@onready var slot1=$Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/slot1
 @onready var slot2=$Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/slot2
 @onready var slot3=$Toolbar/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/slot3
 

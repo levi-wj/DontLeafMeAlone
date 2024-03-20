@@ -29,7 +29,7 @@ _data = {
 "fly": SubResource("Animation_3sfbx")
 }
 
-[node name="PathFollow2D" type="PathFollow2D" groups=["Bug"]]
+[node name="PathFollow2D" type="PathFollow2D"]
 position = Vector2(247, 161)
 rotates = false
 loop = false
@@ -51,5 +51,3 @@ autoplay = "fly"
 libraries = {
 "": SubResource("AnimationLibrary_32ac7")
 }
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
