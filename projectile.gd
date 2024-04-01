@@ -1,6 +1,7 @@
 extends Area2D
 
-const SPEED = 10
+@export var damage = 5
+@export var SPEED = 10
 
 var target = null
 
@@ -12,10 +13,18 @@ func set_target(new_target):
 	target = new_target
 
 func _physics_process(delta):
-	if target and is_instance_valid(target):
-		# Calculate direction to the center of the Area2D
-		var direction = position.direction_to(target.position)
+	if target:
+		if is_instance_valid(target):
+			# Calculate direction to the center of the Area2D
+			var direction = position.direction_to(target.global_position)
+			var velocity = direction * SPEED
+			position += velocity
+		else:
+			queue_free()
 
-		var velocity = direction * SPEED
-		position += velocity
 
+func _on_area_entered(area):
+	var bug = area.get_parent()
+	if bug == target:
+		bug.take_damage(damage)
+		queue_free()

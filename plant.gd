@@ -51,7 +51,7 @@ func grow():
 
 
 func _on_timer_timeout():
-	if stage > 0:
+	if stage > 0: # is plant grown
 		if !target_bug:
 			target_bug = find_nearby_bug(range)
 
