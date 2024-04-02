@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://da681bgj6w2dq"]
+[gd_scene load_steps=9 format=3 uid="uid://da681bgj6w2dq"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_5fa8c"]
 [ext_resource type="Texture2D" uid="uid://binuymb21negi" path="res://images/fly/fly_sprite.png" id="2_7n5on"]
+[ext_resource type="PackedScene" uid="uid://ch6lvbs0oxldr" path="res://health_component.tscn" id="3_soq2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_348vg"]
 size = Vector2(67, 39)
@@ -29,7 +30,18 @@ _data = {
 "fly": SubResource("Animation_3sfbx")
 }
 
-[node name="PathFollow2D" type="PathFollow2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3voh8"]
+bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgxic"]
+bg_color = Color(0.580392, 0.956863, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[node name="PathFollow2D" type="PathFollow2D" groups=["Bug"]]
 position = Vector2(247, 161)
 rotates = false
 loop = false
@@ -51,3 +63,20 @@ autoplay = "fly"
 libraries = {
 "": SubResource("AnimationLibrary_32ac7")
 }
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_soq2u")]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(32, 6)
+offset_left = -16.0
+offset_top = 24.0
+offset_right = 16.0
+offset_bottom = 30.0
+pivot_offset = Vector2(16, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_3voh8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jgxic")
+max_value = 1.0
+value = 0.1
+show_percentage = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

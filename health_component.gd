@@ -15,7 +15,7 @@ func damage(damage_amount: float):
 	current_health = max(current_health - damage_amount, 0)
 	health_changed.emit()
 	Callable(check_death).call_deferred()
-		
+
 # get the current health of the entity this component is attached to
 func get_health_percent():
 	if max_health <= 0:
