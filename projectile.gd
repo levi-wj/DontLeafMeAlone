@@ -11,6 +11,7 @@ func _ready():
 	
 func set_target(new_target):
 	target = new_target
+	new_target.projected_health -= damage
 
 func _physics_process(delta):
 	if target:

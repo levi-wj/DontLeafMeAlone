@@ -1,7 +1,6 @@
 extends PathFollow2D
 
 @export var move_speed = 50
-@export var health = 2
 @export var attack_str = 2
 
 @onready var health_component = $HealthComponent
@@ -10,6 +9,7 @@ extends PathFollow2D
 var last_frame_pos
 var attacking = false
 var target_plant = null
+@onready var projected_health = health_component.max_health
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
