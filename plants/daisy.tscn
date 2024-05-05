@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://7mtyw3nkmyef"]
+
+[ext_resource type="Texture2D" uid="uid://5cwrgbgt5jh7" path="res://images/daisy/daisy_three.png" id="1_4okxf"]
+[ext_resource type="Script" path="res://plants/daisy.gd" id="1_5k8j8"]
+[ext_resource type="PackedScene" uid="uid://gtevhoytmcg3" path="res://health_component.tscn" id="2_kq3hg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpy7c"]
+size = Vector2(46, 95)
+
+[node name="Daisy" type="Area2D" groups=["Plant"]]
+script = ExtResource("1_5k8j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_xpy7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4okxf")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_kq3hg")]
+offset_left = -11.0
+offset_top = 49.0
+offset_right = 21.0
+offset_bottom = 55.0
+max_health = 50.0
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

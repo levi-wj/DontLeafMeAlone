@@ -1,22 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0817k1j7u7cw"]
+[gd_scene load_steps=8 format=3 uid="uid://b0817k1j7u7cw"]
 
 [ext_resource type="Script" path="res://plant.gd" id="1_vplj1"]
 [ext_resource type="Texture2D" uid="uid://qfhepnqfoxml" path="res://images/sunflower/sunflower_bud.png" id="2_fall0"]
 [ext_resource type="Texture2D" uid="uid://gussm55dh43v" path="res://images/sunflower/sunflower_one.png" id="3_4dmef"]
 [ext_resource type="Texture2D" uid="uid://b16o37dohwlxw" path="res://images/sunflower/sunflower_two.png" id="4_h6u1g"]
 [ext_resource type="PackedScene" uid="uid://d4b83miv5xe3" path="res://plants/sunflower_projectile.tscn" id="5_seqtv"]
-[ext_resource type="PackedScene" uid="uid://ch6lvbs0oxldr" path="res://health_component.tscn" id="6_q8u46"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mns2"]
-bg_color = Color(0.247059, 0.14902, 0.192157, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm83f"]
-bg_color = Color(0.580392, 0.956863, 0.282353, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.247059, 0.14902, 0.192157, 1)
+[ext_resource type="PackedScene" uid="uid://gtevhoytmcg3" path="res://health_component.tscn" id="6_q8u46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrmcx"]
 size = Vector2(68, 60)
@@ -27,21 +16,6 @@ script = ExtResource("1_vplj1")
 sprites = [ExtResource("2_fall0"), ExtResource("3_4dmef"), ExtResource("4_h6u1g")]
 projectile = ExtResource("5_seqtv")
 
-[node name="HealthComponent" parent="." instance=ExtResource("6_q8u46")]
-
-[node name="HealthBar" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(32, 6)
-offset_left = -16.0
-offset_top = 24.0
-offset_right = 16.0
-offset_bottom = 30.0
-pivot_offset = Vector2(16, 0)
-theme_override_styles/background = SubResource("StyleBoxFlat_6mns2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_dm83f")
-max_value = 1.0
-value = 0.1
-show_percentage = false
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_fall0")
 
@@ -51,5 +25,7 @@ shape = SubResource("RectangleShape2D_xrmcx")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("6_q8u46")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

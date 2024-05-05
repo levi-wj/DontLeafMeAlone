@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://4fdn1ik7vm4i"]
+[gd_scene load_steps=10 format=3 uid="uid://4fdn1ik7vm4i"]
 
 [ext_resource type="Texture2D" uid="uid://c34p18jmkyasw" path="res://images/tileset.png" id="1_ncd1v"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_nhcxl"]
 [ext_resource type="Script" path="res://Spawner.gd" id="3_1mren"]
 [ext_resource type="PackedScene" uid="uid://bc5w158a5u3va" path="res://Toolbar.tscn" id="4_fdr3u"]
 [ext_resource type="PackedScene" uid="uid://bgf5rnvoh2h56" path="res://shop_menu.tscn" id="5_77gpj"]
+[ext_resource type="PackedScene" uid="uid://7mtyw3nkmyef" path="res://plants/daisy.tscn" id="6_4s86q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw6fq"]
 texture = ExtResource("1_ncd1v")
@@ -51,7 +52,7 @@ sources/1 = SubResource("TileSetAtlasSource_cw6fq")
 
 [sub_resource type="Curve2D" id="Curve2D_d0pqb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -411.512, 556.316, 0, 0, 0, 0, 1185.94, 564.834, 0, 0, 0, 0, 1164.16, -95.3024, 0, 0, 0, 0, -151.11, -89.3399, 0, 0, 0, 0, -159.632, 345.924, 0, 0, 0, 0, 939.737, 339.962, 0, 0, 0, 0, 925.534, 122.755, 0, 0, 0, 0, 235.232, 119.348)
+"points": PackedVector2Array(0, 0, 0, 0, -411.512, 556.316, 0, 0, 0, 0, 1185.94, 564.834, 0, 0, 0, 0, 1164.16, -95.3024, 0, 0, 0, 0, -151.11, -89.3399, 0, 0, 0, 0, -159.632, 345.924, 0, 0, 0, 0, 939.737, 339.962, 0, 0, 0, 0, 925.534, 122.755, 0, 0, 0, 0, 164.213, 121.904)
 }
 point_count = 8
 
@@ -74,3 +75,6 @@ script = ExtResource("3_1mren")
 
 [node name="ShopMenu" parent="." instance=ExtResource("5_77gpj")]
 visible = false
+
+[node name="Daisy" parent="." instance=ExtResource("6_4s86q")]
+position = Vector2(577, 417)

@@ -4,7 +4,6 @@ extends PathFollow2D
 @export var attack_str = 2
 
 @onready var health_component = $HealthComponent
-@onready var health_bar = $HealthBar
 
 var last_frame_pos
 var attacking = false
@@ -14,13 +13,6 @@ var target_plant = null
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	move_speed += rng.randf_range(-5.0, 5.0)
-	
-	# Health bar init
-	health_component.health_changed.connect(update_health_display)
-	update_health_display()
-
-func update_health_display():
-	health_bar.value = health_component.get_health_percent()
 
 func take_damage(amt):
 	health_component.damage(amt)

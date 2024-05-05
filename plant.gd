@@ -8,7 +8,6 @@ signal take_DMG
 @export var range = 7
 
 @onready var health_component = $HealthComponent
-@onready var health_bar = $HealthBar
 @onready var sprite = $Sprite2D
 @onready var timer = $Timer
 
@@ -18,20 +17,10 @@ const MAX_STAGE = 2
 
 func _ready():
 	timer.wait_time = attack_delay
-	health_component.health_changed.connect(on_health_change)
-	update_health_display()
 	
 	
 func deal_damage(amt):
 	health_component.damage(amt)
-
-
-func update_health_display():
-	health_bar.value = health_component.get_health_percent()
-
-
-func on_health_change():
-	update_health_display()
 
 
 func find_bug_in_range():
@@ -57,7 +46,6 @@ func _on_timer_timeout():
 			target_bug = find_bug_in_range()
 		
 		if (target_bug):
-			print('shooting at bug this far away:', position.distance_to(target_bug.global_position))
 			if !is_bug_in_range(target_bug): # do we have a valid target in range?
 				target_bug = find_bug_in_range()
 			var projectile_inst = projectile.instantiate()
